@@ -45,5 +45,19 @@ class TestSpacecraft(unittest.TestCase):
         spacecraft.turn_right()
         self.assertEqual(spacecraft.direction, "North")
 
+    def test_turn_up_west(self):
+        starting_position = (0, 0, 0)
+        initial_direction = "West"
+        spacecraft = Spacecraft(*starting_position, initial_direction)
+        spacecraft.turn_up()
+        self.assertEqual(spacecraft.direction, "Up")
+
+    def test_turn_down_west(self):
+        starting_position = (0, 0, 0)
+        initial_direction = "West"
+        spacecraft = Spacecraft(*starting_position, initial_direction)
+        spacecraft.turn_down()
+        self.assertEqual(spacecraft.direction, "Down")
+
 if __name__ == '__main__':
     unittest.main()
