@@ -59,5 +59,26 @@ class TestSpacecraft(unittest.TestCase):
         spacecraft.turn_down()
         self.assertEqual(spacecraft.direction, "Down")
 
+    def test_move_backward_west(self):
+        starting_position = (0, 0, 0)
+        initial_direction = "West"
+        spacecraft = Spacecraft(*starting_position, initial_direction)
+        spacecraft.move_backward()
+        self.assertEqual(spacecraft.x, 1)
+
+    def test_move_backward_north(self):
+        starting_position = (0, 0, 0)
+        initial_direction = "North"
+        spacecraft = Spacecraft(*starting_position, initial_direction)
+        spacecraft.move_backward()
+        self.assertEqual(spacecraft.y, -1)
+
+    def test_move_backward_north_minus11(self):
+        starting_position = (0, -11, 0)
+        initial_direction = "North"
+        spacecraft = Spacecraft(*starting_position, initial_direction)
+        spacecraft.move_backward()
+        self.assertEqual(spacecraft.y, -12)
+
 if __name__ == '__main__':
     unittest.main()
