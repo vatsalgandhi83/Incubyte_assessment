@@ -80,5 +80,13 @@ class TestSpacecraft(unittest.TestCase):
         spacecraft.move_backward()
         self.assertEqual(spacecraft.y, -12)
 
+    def test_turn_down_up(self):
+        starting_position = (0, 0, 0)
+        initial_direction = "North"
+        spacecraft = Spacecraft(*starting_position, initial_direction)
+        spacecraft.turn_up()  # It's angle is 'Up'
+        spacecraft.turn_down()
+        self.assertEqual(spacecraft.angle, "Plane")
+
 if __name__ == '__main__':
     unittest.main()
